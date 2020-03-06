@@ -8,6 +8,6 @@
 
 import Foundation
 
-class MyPipelineData: PipelineData {
+class MyPipelineData: PipelineDataProtocol {
     var data = ""
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PipelineResultProtocol {
+public protocol PipelineResultProtocol {
     func OnResult(sourcePipelineHashCode: Int, pipelineData: PipelineDataProtocol)
 }

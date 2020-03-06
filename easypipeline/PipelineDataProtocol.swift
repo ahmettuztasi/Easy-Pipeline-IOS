@@ -8,5 +8,5 @@
 
 import Foundation
 
-protocol PipelineDataProtocol {
+public protocol PipelineDataProtocol {
 }

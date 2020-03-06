@@ -8,10 +8,14 @@
 
 import Foundation
 
-class WorkStation {
+open class WorkStation {
     private var _nextWorkStation: WorkStation?
     private var _prevWorkStation: WorkStation?
     internal var IsRoot = false
+    
+    public init() {
+        
+    }
     
     public func Next(workStation: WorkStation) -> WorkStation {
         _nextWorkStation = workStation
@@ -27,7 +31,7 @@ class WorkStation {
         }
     }
     
-    internal func InvokeAsync(data: PipelineDataProtocol) {
+    open func InvokeAsync(data: PipelineDataProtocol) {
         if _nextWorkStation != nil {
             _nextWorkStation?.InvokeAsync(data: data)
         }

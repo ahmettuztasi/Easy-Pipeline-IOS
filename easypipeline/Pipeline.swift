@@ -8,18 +8,18 @@
 
 import Foundation
 
-class Pipeline: WorkStation {
+public class Pipeline: WorkStation {
     private var pipelineResult: PipelineResultProtocol?
     private var requestCode: Int?
     
-    init(pipelineResult: PipelineResultProtocol, requestCode: Int) {
+    public init(pipelineResult: PipelineResultProtocol, requestCode: Int) {
         super.init()
         IsRoot = true
         self.requestCode = requestCode
         self.pipelineResult = pipelineResult
     }
     
-    internal override func InvokeAsync(data: PipelineDataProtocol) {
+    public override func InvokeAsync(data: PipelineDataProtocol) {
         DispatchQueue.global().async {
             self.runInBackground(iPipelineData: data, completion: { requestCode, response  in
                 self.pipelineResult?.OnResult(sourcePipelineHashCode: requestCode, pipelineData: response)

@@ -9,6 +9,11 @@
 import Foundation
 
 class WorkStation2: WorkStation {
+    
+    public override init() {
+       super.init()
+    }
+    
     override func InvokeAsync(data: PipelineDataProtocol) {
         sleep(3)
         (data as! MyPipelineData).data.append("b")

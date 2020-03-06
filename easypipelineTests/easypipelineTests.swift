@@ -12,10 +12,9 @@ import XCTest
 class easypipelineTests: XCTestCase {
     
     var expecResponse: XCTestExpectation?
-    var expecReqCode1: XCTestExpectation?
-    var expecReqCode2: XCTestExpectation?
+    var expecReqCode: XCTestExpectation?
     
-    var pipelineData: PipelineData?
+    var pipelineData: MyPipelineData?
     static var ReqCode: Int?
     
     override func setUp() {
@@ -26,27 +25,10 @@ class easypipelineTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         self.pipelineData = nil
         easypipelineTests.ReqCode = nil
-        self.expecReqCode1 = nil
-        self.expecReqCode2 = nil
+        self.expecReqCode = nil
         self.expecResponse = nil
     }
-
-    //MARK: Pipeline general test
-    func testEasyPipeline() {
-        self.expecResponse = expectation(description: "The expected response is 'ab' by data")
-        let pipelineData = MyPipelineData()
-        easypipelineTests.ReqCode = 1
-        
-        Pipeline(pipelineResult: self, requestCode: easypipelineTests.ReqCode!)
-            .Next(workStation: WorkStation1())
-            .Next(workStation: WorkStation2())
-            .Run(data: pipelineData)
-        
-        wait(for: [expecResponse!], timeout: 8.0)
-        
-        XCTAssertEqual(pipelineData.data, "ab")
-    }
-   
+    
     //MARK: Pipeline async test
     func test2EasyPipeline() {
         self.expecResponse = expectation(description: "The expected response is 'ab' by data")
@@ -73,7 +55,7 @@ class easypipelineTests: XCTestCase {
     
     //MARK: test request code for 1
     func testRequestCode1() {
-        self.expecReqCode1 = expectation(description: "The expected response is '1' by request code")
+        self.expecReqCode = expectation(description: "The expected response is '1' by request code")
         
         let pipelineData = MyPipelineData()
         easypipelineTests.ReqCode = 1
@@ -83,22 +65,22 @@ class easypipelineTests: XCTestCase {
             .Next(workStation: WorkStation2())
             .Run(data: pipelineData)
         
-        wait(for: [expecReqCode1!], timeout: 8.0)
+        wait(for: [expecReqCode!], timeout: 8.0)
     }
     
-    //MARK: test request code for 2
+    //MARK: test request code for 1
     func testRequestCode2() {
-        self.expecReqCode2 = expectation(description: "The expected response is '2' by request code")
+        self.expecReqCode = expectation(description: "The expected response is '1' by request code")
         
         let pipelineData = MyPipelineData()
-        easypipelineTests.ReqCode = 2
+        easypipelineTests.ReqCode = 1
         
         Pipeline(pipelineResult: self, requestCode: easypipelineTests.ReqCode!)
             .Next(workStation: WorkStation1())
             .Next(workStation: WorkStation2())
             .Run(data: pipelineData)
         
-        wait(for: [expecReqCode2!], timeout: 8.0)
+        wait(for: [expecReqCode!], timeout: 8.0)
     }
     
 }
@@ -109,12 +91,7 @@ extension easypipelineTests: PipelineResultProtocol {
         expecResponse?.fulfill()
         //Request code expectation for 1
         if sourcePipelineHashCode == 1 {
-            expecReqCode1?.fulfill()
-        }
-        
-        //Request code expectation for 2
-        if sourcePipelineHashCode == 2 {
-            expecReqCode2?.fulfill()
+            expecReqCode?.fulfill()
         }
     }
 }
