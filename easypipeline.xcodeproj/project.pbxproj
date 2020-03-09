@@ -10,13 +10,13 @@
 		8B0ECD74240FDE4000CD0C3C /* WorkStation1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80BC240FD1DB0065825D /* WorkStation1.swift */; };
 		8B0ECD75240FDE4000CD0C3C /* WorkStation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80BE240FD1E60065825D /* WorkStation2.swift */; };
 		8B0ECD78240FE30900CD0C3C /* MyPipelineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0ECD77240FE30900CD0C3C /* MyPipelineData.swift */; };
+		8B6937112416329A008BD032 /* PipelineProgressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6937102416329A008BD032 /* PipelineProgressProtocol.swift */; };
 		8BDF80A2240FC2C20065825D /* easypipeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDF8098240FC2C20065825D /* easypipeline.framework */; };
 		8BDF80A7240FC2C20065825D /* easypipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80A6240FC2C20065825D /* easypipelineTests.swift */; };
 		8BDF80A9240FC2C20065825D /* easypipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BDF809B240FC2C20065825D /* easypipeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BDF80B7240FC3BB0065825D /* PipelineDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80B2240FC3BA0065825D /* PipelineDataProtocol.swift */; };
 		8BDF80B8240FC3BB0065825D /* WorkStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80B3240FC3BA0065825D /* WorkStation.swift */; };
 		8BDF80B9240FC3BB0065825D /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80B4240FC3BA0065825D /* Pipeline.swift */; };
-		8BDF80BA240FC3BB0065825D /* PipelineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80B5240FC3BB0065825D /* PipelineData.swift */; };
 		8BDF80BB240FC3BB0065825D /* PipelineResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF80B6240FC3BB0065825D /* PipelineResultProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		8B0ECD77240FE30900CD0C3C /* MyPipelineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPipelineData.swift; sourceTree = "<group>"; };
+		8B6937102416329A008BD032 /* PipelineProgressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineProgressProtocol.swift; sourceTree = "<group>"; };
 		8BDF8098240FC2C20065825D /* easypipeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = easypipeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDF809B240FC2C20065825D /* easypipeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = easypipeline.h; sourceTree = "<group>"; };
 		8BDF809C240FC2C20065825D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		8BDF80B2240FC3BA0065825D /* PipelineDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipelineDataProtocol.swift; sourceTree = "<group>"; };
 		8BDF80B3240FC3BA0065825D /* WorkStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStation.swift; sourceTree = "<group>"; };
 		8BDF80B4240FC3BA0065825D /* Pipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
-		8BDF80B5240FC3BB0065825D /* PipelineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipelineData.swift; sourceTree = "<group>"; };
 		8BDF80B6240FC3BB0065825D /* PipelineResultProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipelineResultProtocol.swift; sourceTree = "<group>"; };
 		8BDF80BC240FD1DB0065825D /* WorkStation1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStation1.swift; sourceTree = "<group>"; };
 		8BDF80BE240FD1E60065825D /* WorkStation2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStation2.swift; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 				8BDF80B4240FC3BA0065825D /* Pipeline.swift */,
 				8BDF80B3240FC3BA0065825D /* WorkStation.swift */,
 				8BDF80B2240FC3BA0065825D /* PipelineDataProtocol.swift */,
-				8BDF80B5240FC3BB0065825D /* PipelineData.swift */,
 				8BDF80B6240FC3BB0065825D /* PipelineResultProtocol.swift */,
+				8B6937102416329A008BD032 /* PipelineProgressProtocol.swift */,
 				8BDF809B240FC2C20065825D /* easypipeline.h */,
 				8BDF809C240FC2C20065825D /* Info.plist */,
 				8B0ECD73240FDD8600CD0C3C /* Test */,
@@ -229,11 +229,11 @@
 			files = (
 				8BDF80B9240FC3BB0065825D /* Pipeline.swift in Sources */,
 				8B0ECD75240FDE4000CD0C3C /* WorkStation2.swift in Sources */,
-				8BDF80BA240FC3BB0065825D /* PipelineData.swift in Sources */,
 				8BDF80B7240FC3BB0065825D /* PipelineDataProtocol.swift in Sources */,
 				8B0ECD74240FDE4000CD0C3C /* WorkStation1.swift in Sources */,
 				8BDF80B8240FC3BB0065825D /* WorkStation.swift in Sources */,
 				8BDF80BB240FC3BB0065825D /* PipelineResultProtocol.swift in Sources */,
+				8B6937112416329A008BD032 /* PipelineProgressProtocol.swift in Sources */,
 				8B0ECD78240FE30900CD0C3C /* MyPipelineData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

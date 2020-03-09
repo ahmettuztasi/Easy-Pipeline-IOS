@@ -36,7 +36,7 @@ class easypipelineTests: XCTestCase {
         let pipelineData1 = MyPipelineData()
         easypipelineTests.ReqCode = 1
         
-        Pipeline(pipelineResult: self, requestCode: easypipelineTests.ReqCode!)
+        Pipeline(pipelineResult: self, pipelineRequestCode: easypipelineTests.ReqCode!)
             .Next(workStation: WorkStation1())
             .Next(workStation: WorkStation2())
             .Run(data: pipelineData1)
@@ -45,7 +45,7 @@ class easypipelineTests: XCTestCase {
         let pipelineData2 = MyPipelineData()
         easypipelineTests.ReqCode = 2
         
-        Pipeline(pipelineResult: self, requestCode: easypipelineTests.ReqCode!)
+        Pipeline(pipelineResult: self, pipelineRequestCode: easypipelineTests.ReqCode!)
             .Next(workStation: WorkStation1())
             .Next(workStation: WorkStation2())
             .Run(data: pipelineData2)
@@ -60,7 +60,7 @@ class easypipelineTests: XCTestCase {
         let pipelineData = MyPipelineData()
         easypipelineTests.ReqCode = 1
         
-        Pipeline(pipelineResult: self, requestCode: easypipelineTests.ReqCode!)
+        Pipeline(pipelineResult: self, pipelineRequestCode: easypipelineTests.ReqCode!)
             .Next(workStation: WorkStation1())
             .Next(workStation: WorkStation2())
             .Run(data: pipelineData)
@@ -75,7 +75,7 @@ class easypipelineTests: XCTestCase {
         let pipelineData = MyPipelineData()
         easypipelineTests.ReqCode = 1
         
-        Pipeline(pipelineResult: self, requestCode: easypipelineTests.ReqCode!)
+        Pipeline(pipelineResult: self, pipelineRequestCode: easypipelineTests.ReqCode!)
             .Next(workStation: WorkStation1())
             .Next(workStation: WorkStation2())
             .Run(data: pipelineData)
@@ -86,7 +86,7 @@ class easypipelineTests: XCTestCase {
 }
 
 extension easypipelineTests: PipelineResultProtocol {
-    func OnResult(sourcePipelineHashCode: Int, pipelineData: PipelineDataProtocol) {
+    func OnResult(pipelineRequestCode sourcePipelineHashCode: Int, pipelineData: PipelineDataProtocol) {
         //Response expectation
         expecResponse?.fulfill()
         //Request code expectation for 1
